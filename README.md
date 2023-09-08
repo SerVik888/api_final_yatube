@@ -40,7 +40,7 @@
 
 `cd api_final_yatube` -> перейти в репозиторий
 
-* Если у вас Linux/macOS
+* Если у вас Linux/macOS\
     `python3 -m venv env` -> создать виртуальное окружение\
     `source env/bin/activate` -> активировать виртуальное окружение\
     `python3 -m pip install --upgrade pip` -> обновить установщик\
@@ -49,7 +49,7 @@
     `python3 manage.py createsuperuser` -> создать суперпользователя\
     `python3 manage.py runserver` -> запустить проект
 
-* Если у вас windows
+* Если у вас windows\
     `python -m venv env` -> создать виртуальное окружение\
     `source venv/Scripts/activate` -> активировать виртуальное окружение\
     `python -m pip install --upgrade pip` -> обновить установщик\
