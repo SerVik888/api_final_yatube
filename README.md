@@ -65,3 +65,7 @@
 - djangorestframework
 - djangorestframework-simplejwt
 - djoser
+
+
+Автор: Сафонов Сергей
+Почта: [sergey_safonov86@inbox.ru](mailto:sergey_safonov86@inbox.ru)

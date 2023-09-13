@@ -42,6 +42,7 @@ class Post(models.Model):
         verbose_name = 'пост'
         verbose_name_plural = 'Посты'
         default_related_name = 'posts'
+        ordering = ('pub_date',)
 
     def __str__(self):
         return self.text[:FIRST_THIRTY_SUMBOLS]
@@ -72,7 +73,7 @@ class Follow(models.Model):
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name='users',
+        related_name='subscribers',
         verbose_name='Подписчик'
     )
     following = models.ForeignKey(
@@ -85,6 +86,15 @@ class Follow(models.Model):
     class Meta:
         verbose_name = 'Подписка'
         verbose_name_plural = 'Подписки'
+        constraints = [
+            models.UniqueConstraint(
+                fields=('user', 'following'), name='unique_user_and_following'
+            ),
+            models.CheckConstraint(
+                name='subscriber_is_not_following',
+                check=~models.Q(user_id=models.F("following_id")),
+            ),
+        ]
 
     def __str__(self):
         return f'{self.user} {self.following}'
