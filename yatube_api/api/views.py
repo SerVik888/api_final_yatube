@@ -3,10 +3,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import mixins, viewsets
 from rest_framework.filters import SearchFilter
 from rest_framework.pagination import LimitOffsetPagination
-from rest_framework.permissions import (
-    IsAuthenticated,
-    IsAuthenticatedOrReadOnly
-)
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from api.permissions import IsOwnerOrReadOnly
 from api.serializers import (
@@ -27,7 +24,6 @@ class FollowViewSet(
     """
 
     serializer_class = FollowSerializer
-    permission_classes = (IsAuthenticated,)
     filter_backends = (DjangoFilterBackend, SearchFilter)
     search_fields = ('following__username',)
 
