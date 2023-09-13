@@ -67,5 +67,5 @@
 - djoser
 
 
-Автор: Сафонов Сергей
+Автор: Сафонов Сергей\
 Почта: [sergey_safonov86@inbox.ru](mailto:sergey_safonov86@inbox.ru)
